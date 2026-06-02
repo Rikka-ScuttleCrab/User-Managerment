@@ -1,0 +1,57 @@
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 310px;
+  right: 30px;
+  height: 80px;
+  border-radius: 24px;
+  background: white;
+  padding: 20px 30px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  z-index: 1000;
+}
+
+
+.topbar-right {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+.back-btn {
+
+  border: none;
+
+  padding: 10px 18px;
+
+  border-radius: 10px;
+
+  background: #2f80ed;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #1d6fe0;
+}
+
+.breadcrumb {
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  color: #444;
+}

@@ -1,0 +1,190 @@
+<!-- dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard</title>
+
+  <link rel="stylesheet" href="/Fe/css/dashboard.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <div class="logo" onclick="goHome()">
+      NEWS TODAY
+    </div>
+
+    <div class="nav-right">
+
+      <div class="welcome-box">
+
+        <span>
+          Xin chào,
+        </span>
+
+        <strong id="nickname">
+          Loading...
+        </strong>
+
+      </div>
+
+      <button
+        class="logout-btn"
+        onclick="logout()"
+      >
+        Đăng xuất
+      </button>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Trung tâm tài khoản
+      </h1>
+
+      <p>
+        Quản lý thông tin và các chức năng hệ thống
+      </p>
+
+    </div>
+
+  </section>
+
+    <!-- MENU -->
+
+    <section class="dashboard-section">
+
+    <div class="dashboard-grid">
+
+      <!-- PROFILE -->
+
+      <div
+        class="dashboard-card"
+        onclick="goProfile()"
+      >
+
+        <div class="card-icon">
+          👤
+        </div>
+
+        <h3>
+          Hồ sơ cá nhân
+        </h3>
+
+        <p>
+          Chỉnh sửa thông tin và đổi mật khẩu
+        </p>
+
+      </div>
+
+      <!-- NEWS -->
+
+      <div
+        class="dashboard-card"
+        onclick="goHome()"
+      >
+
+        <div class="card-icon">
+          📰
+        </div>
+
+        <h3>
+          Trang tin tức
+        </h3>
+
+        <p>
+          Quay lại trang đọc báo
+        </p>
+
+      </div>
+
+      <!-- ADMIN -->
+
+      <div
+        class="dashboard-card admin-card hidden"
+        id="adminCard"
+        onclick="goAdmin()">
+        <div class="card-icon">
+          ⚙️
+        </div>
+
+        <h3>
+          Quản lý hệ thống
+        </h3>
+
+        <p>
+          Quản lý người dùng hệ thống
+        </p>
+
+      </div>
+
+      <div
+        class="dashboard-card approve-card hidden"
+        id="approveCard"
+        onclick="goApproveNews()">
+
+        <div class="card-icon">
+            📝
+          </div>
+
+          <h3>
+            Duyệt bài báo
+          </h3>
+
+          <p>
+            Kiểm tra và phê duyệt bài viết trước khi đăng
+          </p>
+
+        </div>
+
+        <!-- POST NEWS -->
+
+        <div
+          class="dashboard-card post-card hidden"
+          id="postNewsCard"
+          onclick="goPostNews()">
+
+          <div class="card-icon">
+            ✍️
+          </div>
+
+          <h3>
+            Đăng bài báo
+          </h3>
+
+          <p>
+            Tạo và đăng tải bài viết mới lên hệ thống
+          </p>
+
+        </div>
+
+    </div>
+
+    
+
+  </section>
+  <script src="/Fe/js/config.js"></script>
+  <script src="/Fe/js/auth.js"></script>
+  <script src="/Fe/js/token.js"></script>
+  <script src="/Fe/js/app.js"></script>
+  <script src="/Fe/js/api.js"></script>
+  <script src="/Fe/js/dashboard.js"></script>
+
+</body>
+
+</html>

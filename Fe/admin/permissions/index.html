@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Phân quyền nhóm người dùng
+  </title>
+
+  <link rel="stylesheet" href="/Fe/css/toast.css">
+  <link rel="stylesheet" href="/Fe/css/sidebar.css">
+  <link rel="stylesheet" href="/Fe/css/topbar.css">
+  <link rel="stylesheet" href="/Fe/css/permissions.css">
+
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+
+  <div id="sidebar-container"></div>
+
+  <!-- MAIN -->
+
+  <main class="main-content">
+
+    <!-- TOPBAR -->
+
+    <div id="topbar-container"></div>
+
+    <!-- CONTENT -->
+
+    <div class="content-card">
+
+      <!-- HEADER -->
+
+      <div class="content-header">
+
+        <h2 data-i18n="permissionManagement">
+          Phân quyền nhóm người dùng
+        </h2>
+
+      </div>
+
+      <!-- LAYOUT -->
+
+      <div class="permission-layout">
+
+        <!-- LEFT -->
+
+        <div class="role-sidebar">
+
+          <div class="role-sidebar-title">
+            Danh sách nhóm
+          </div>
+
+          <div id="roleList"></div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="permission-content">
+
+          <div class="permission-header">
+
+            <h3 id="selectedRoleTitle">
+              Chọn nhóm người dùng
+            </h3>
+
+          </div>
+
+          <div class="permission-table-wrapper">
+
+            <table class="permission-module-table">
+
+              <thead>
+
+                <tr>
+
+                  <th>
+                    Chức năng hệ thống
+                  </th>
+
+                  <th>
+                    Quyền hiện có
+                  </th>
+
+                  <th>
+                    Thao tác
+                  </th>
+
+                </tr>
+
+              </thead>
+
+              <tbody id="moduleTable">
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- MODAL -->
+
+  <div
+    class="modal"
+    id="permissionModal"
+  >
+
+    <div class="modal-content permission-modal">
+
+      <!-- HEADER -->
+
+      <div class="modal-header">
+
+        <h3 id="permissionModalTitle">
+          Quyền module
+        </h3>
+
+        <button
+          class="close-modal-btn"
+          onclick="closePermissionModal()"
+        >
+          ✕
+        </button>
+
+      </div>
+
+      <!-- LIST -->
+
+      <div
+        id="permissionCheckboxList"
+        class="permission-checkbox-list"
+      ></div>
+
+      <!-- ACTIONS -->
+
+      <div class="modal-actions">
+
+        <button
+          class="cancel-btn"
+          onclick="closePermissionModal()"
+        >
+          Huỷ
+        </button>
+
+        <button
+          class="save-btn"
+          onclick="savePermissions()"
+        >
+          Lưu thay đổi
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+    <div id="toastContainer"
+      class="toast-container"></div>
+  <!-- SCRIPTS -->
+
+  <script src="/Fe/js/config.js"></script>
+  <script src="/Fe/js/auth.js"></script>
+  <script src="/Fe/js/token.js"></script>
+  <script src="/Fe/js/app.js"></script>
+  <script src="/Fe/js/api.js"></script>
+  <script src="/Fe/js/topbar.js"></script>
+  <script src="/Fe/js/common/admin-ui.js"></script>
+  <script src="/Fe/js/common/admin-api.js"></script>
+  <script src="/Fe/js/permissions.js"></script>
+
+  <script src="/Fe/js/lang/vi/vi.js"></script>
+
+  <script src="/Fe/js/lang/en/en.js"></script>
+
+  <script src="/Fe/js/lang/i18n.js"></script>
+    <script src="/Fe/js/sidebar.js"></script>
+  <script>
+
+    loadSidebar("permissions");
+
+    const t = getTranslations();
+
+    loadTopbar(
+      `Quản trị hệ thống/ Phân quyền nhóm người dùng`
+    );
+    restoreSidebarState();
+  </script>
+
+</body>
+
+</html>

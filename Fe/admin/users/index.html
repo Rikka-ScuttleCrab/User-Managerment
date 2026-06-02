@@ -1,0 +1,234 @@
+<!-- admin/admin.html -->
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Quản trị hệ thống</title>
+  <link rel="stylesheet" href="/Fe/css/toast.css">
+  <link rel="stylesheet" href="/Fe/css/users.css">
+  <link rel="stylesheet" href="/Fe/css/sidebar.css">
+  <link rel="stylesheet" href="/Fe/css/topbar.css">
+
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+
+   <div id="sidebar-container"></div>
+
+  <!-- MAIN -->
+
+  <main class="main-content">
+
+    <!-- TOPBAR -->
+
+    <div id="topbar-container"></div>
+
+    <!-- CONTENT -->
+
+    <div class="content-card">
+
+      <div class="content-header">
+
+        <h2>
+          Danh mục người dùng
+        </h2>
+
+        <button
+          data-permission="CREATE"
+          class="add-btn hidden"
+          onclick="openCreateModal()"
+        >
+          + Tạo người dùng
+        </button>
+
+      </div>
+
+      <!-- SEARCH -->
+
+        <div class="search-box">
+
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm kiếm ID, username, email..."
+            onkeydown="handleSearchEnter(event)">
+
+          <button
+            class="search-btn"
+            onclick="searchUsers()">
+            🔍
+          </button>
+
+        </div>
+
+      <!-- TABLE -->
+      <div class="table-wrapper">
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th onclick="toggleIdSort()" style="cursor:pointer;">
+                ID ↕
+              </th>
+
+              <th>
+                Username
+              </th>
+
+              <th>
+                Email
+              </th>
+
+              <th>
+                Nickname
+              </th>
+
+              <th>
+
+                <select
+                  id="roleFilter"
+                  onchange="filterRole(this.value)">
+
+                  <option value="">
+                    Tất cả Role
+                  </option>
+
+                </select>
+
+              </th>
+
+              <th>
+
+                <select onchange="filterGender(this.value)">
+
+                  <option value="">
+                    Tất cả Gender
+                  </option>
+
+                  <option value="MALE">
+                    MALE
+                  </option>
+
+                  <option value="FEMALE">
+                    FEMALE
+                  </option>
+
+                  <option value="OTHER">
+                    OTHER
+                  </option>
+
+                </select>
+
+              </th>
+
+              <th>
+
+                <select onchange="filterStatus(this.value)">
+
+                  <option value="">
+                    Tất cả trạng thái
+                  </option>
+
+                  <option value="ACTIVE">
+                    Hoạt động
+                  </option>
+
+                  <option value="INACTIVE">
+                    Bị khóa
+                  </option>
+
+                </select>
+
+              </th>
+
+              <th class="action-column">
+                Thao tác
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody id="userTable">
+
+            <!-- render js -->
+
+          </tbody>
+          
+
+        </table>
+      </div>
+
+      <div
+        class="pagination"
+        id="pagination"
+      ></div>
+    </div>
+
+  </main>
+
+  <div id="confirm-box"></div>
+
+  <!-- CREATE USER MODAL -->
+
+  <div id="modal-content"></div>
+
+
+  <!-- EDIT USER MODAL -->
+
+  <div id="modal-container"></div>
+
+
+  <div id="toastContainer"
+      class="toast-container"></div>
+
+  <script src="/Fe/js/config.js"></script>
+  <script src="/Fe/js/auth.js"></script>
+  <script src="/Fe/js/token.js"></script>
+  <script src="/Fe/js/app.js"></script>
+  <script src="/Fe/js/api.js"></script>
+
+  
+  <script src="/Fe/js/admin/users/pagination.js"></script>
+  <script src="/Fe/js/common/admin-state.js"></script>
+  <script src="/Fe/js/common/admin-api.js"></script>
+  <script src="/Fe/js/common/admin-ui.js"></script>
+  <script src="/Fe/js/admin/users/state.js"></script>
+  <script src="/Fe/js/admin/users/users.js"></script>
+  <script src="/Fe/js/admin/users/filter.js"></script>
+  <script src="/Fe/js/admin/users/api.js"></script>
+  <script src="/Fe/js/modal/users.js"></script>
+
+  <script src="/Fe/js/sidebar.js"></script>
+  <script src="/Fe/js/topbar.js"></script>
+  <script>
+
+  (async () => {
+
+    await loadSidebar("users");
+    restoreSidebarState();
+    loadTopbar(
+      "Quản trị hệ thống / Danh mục người dùng"
+    );
+
+
+  })();
+
+  </script>
+
+</body>
+
+</html>

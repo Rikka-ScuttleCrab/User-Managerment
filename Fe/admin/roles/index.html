@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Danh mục nhóm người dùng
+  </title>
+  <link rel="stylesheet" href="/Fe/css/toast.css">
+  <link rel="stylesheet" href="/Fe/css/roles.css">
+  <link rel="stylesheet" href="/Fe/css/sidebar.css">
+  <link rel="stylesheet" href="/Fe/css/topbar.css">
+
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+
+  <div id="sidebar-container"></div>
+
+  <!-- MAIN -->
+
+  <main class="main-content">
+
+    <!-- TOPBAR -->
+
+    <div id="topbar-container"></div>
+
+    <!-- CONTENT -->
+
+    <div class="content-card">
+
+      <div class="content-header">
+
+        <h2>
+          Danh mục nhóm người dùng
+        </h2>
+
+        <button data-permission="CREATE" class="add-btn" onclick="openAddRoleModal()">
+          + Thêm nhóm
+        </button>
+
+      </div>
+
+      <!-- TABLE -->
+
+      <table>
+
+        <thead>
+
+          <tr>
+
+            <th>ID</th>
+
+            <th>Tên nhóm</th>
+
+            <th>Thao tác</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody id="roleTable">
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </main>
+<div id="toastContainer"
+      class="toast-container"></div>
+<div id="modal-content"></div>
+
+
+
+<script src="/Fe/js/config.js"></script>
+<script src="/Fe/js/auth.js"></script>
+<script src="/Fe/js/token.js"></script>
+<script src="/Fe/js/app.js"></script>
+<script src="/Fe/js/api.js"></script>
+<script src="/Fe/js/common/admin-state.js"></script>
+<script src="/Fe/js/common/admin-api.js"></script>
+<script src="/Fe/js/common/admin-ui.js"></script>
+<script src="/Fe/js/roles.js"></script>
+<script src="/Fe/js/sidebar.js"></script>
+<script src="/Fe/js/topbar.js"></script>
+<script src="/Fe/js/modal/roles.js"></script>
+<script>
+
+  (async () => {
+
+    await loadSidebar("roles");
+    restoreSidebarState();
+    loadTopbar(
+      "Quản trị hệ thống / Danh mục nhóm người dùng"
+    );
+
+
+  })();
+
+</script>
+</body>
+
+</html>

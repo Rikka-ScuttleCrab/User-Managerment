@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+
+  background-image: url('https://yourcommonwealth.org/wp-content/uploads/2023/01/YC-38.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+/* lớp tối nền để card nổi bật hơn */
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(3px);
+}
+
+/* CARD */
+
+.login-card {
+  width: 460px;
+
+  background: rgba(25, 25, 25, 0.78);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 24px;
+
+  padding: 40px 35px;
+
+  text-align: center;
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.45);
+
+  position: relative;
+
+  z-index: 10;
+
+  backdrop-filter: blur(12px);
+
+  color: white;
+}
+
+/* TITLE */
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+  color: #f87171;
+}
+
+h3 {
+  margin-bottom: 30px;
+
+  font-weight: normal;
+
+  color: #d1d5db;
+
+  font-size: 18px;
+}
+
+/* INPUT */
+
+.input-group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #d1d5db;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+
+  padding: 14px 18px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.08);
+
+  color: white;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+.input-group input::placeholder {
+  color: #bdbdbd;
+}
+
+.input-group input:focus {
+
+  border-color: #ef4444;
+
+  background: rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 0 0 3px rgba(239,68,68,0.15);
+}
+
+/* BUTTON */
+
+.login-btn {
+
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #dc2626,
+    #ef4444
+  );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  margin-top: 10px;
+
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 20px rgba(239,68,68,0.3);
+}
+
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: -5px;
+  margin-bottom: 20px;
+}
+
+.forgot-password a {
+  color: #f3f4f6;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.forgot-password a:hover {
+  color: #ef4444;
+}
+
+/* REGISTER */
+
+.register-text {
+
+  margin-top: 22px;
+
+  color: #d1d5db;
+
+  font-size: 14px;
+}
+
+.register-text a {
+
+  color: #ef4444;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  margin-left: 5px;
+
+  transition: 0.3s;
+}
+
+.register-text a:hover {
+  color: #f87171;
+}
+
+/* SELECT */
+
+.input-group select {
+
+  width: 100%;
+
+  padding: 14px 18px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.08);
+
+  color: white;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+.input-group select option {
+  background: #222;
+  color: white;
+}
+
+.input-group select:focus {
+
+  border-color: #ef4444;
+
+  background: rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 0 0 3px rgba(239,68,68,0.15);
+}
+
+#otp {
+  letter-spacing: 5px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ERROR */
+
+.error-text {
+
+  margin-top: 10px;
+
+  color: #fca5a5 !important;
+
+  font-size: 14px;
+}

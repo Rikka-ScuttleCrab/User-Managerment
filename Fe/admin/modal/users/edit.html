@@ -1,0 +1,95 @@
+<div
+  class="modal"
+  id="editUserModal">
+
+  <div class="modal-content">
+
+    <div class="modal-header">
+
+      <h2>
+        Thay đổi thông tin người dùng
+      </h2>
+
+      <button
+        class="close-modal-btn"
+        onclick="closeEditModal()"
+      >
+        ✕
+      </button>
+
+    </div>
+
+    <div class="form-grid">
+
+      <div class="form-group">
+
+        <label>Email</label>
+
+        <input
+          type="email"
+          id="editEmail"
+        >
+
+      </div>
+
+      <div class="form-group">
+
+        <label>Nickname</label>
+
+        <input
+          type="text"
+          id="editNickname"
+        >
+
+      </div>
+
+      <div class="form-group">
+
+        <label>Gender</label>
+
+        <select id="editGender">
+
+          <option value="MALE">
+            MALE
+          </option>
+
+          <option value="FEMALE">
+            FEMALE
+          </option>
+
+          <option value="OTHER">
+            OTHER
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+    <p
+      class="form-error"
+      id="editUserError"
+    ></p>
+
+    <div class="modal-actions">
+
+      <button
+        class="cancel-btn"
+        onclick="closeEditModal()"
+      >
+        Huỷ
+      </button>
+
+      <button
+        class="confirm-btn"
+        onclick="saveEditUser()"
+      >
+        Lưu
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Login UI</title>
+  <link rel="stylesheet" href="/Fe/css/login.css">
+</head>
+<body>
+
+  <!-- LOGIN -->
+
+  <form id="loginForm" onsubmit="login(); return false;">
+
+    <div class="login-card">
+
+      <div 
+        class="logo">
+        NEWS TODAY
+      </div>
+
+      <h3>Chào mừng bạn trở lại</h3>
+
+      <div class="input-group">
+        <label>Tên đăng nhập / Email</label>
+
+        <input
+          id="loginUsername"
+          type="text"
+          placeholder="Nhập tên đăng nhập hoặc email"
+        >
+      </div>
+
+      <div class="input-group">
+
+        <label>Mật khẩu</label>
+
+        <input
+          id="loginPassword"
+          type="password"
+          placeholder="Nhập mật khẩu"
+        >
+      </div>
+
+      <div class="forgot-password">
+        <a href="#" onclick="showForgotPassword()">
+          Quên mật khẩu?
+        </a>
+      </div>
+
+      <div id="login-error" class="error-text"></div>
+
+      <button class="login-btn" type="submit">
+        Đăng nhập
+      </button>
+
+      <div class="register-text">
+
+        Chưa đăng ký thành viên?
+
+        <a href="javascript:void(0)" onclick="showRegister()">
+          Đăng ký ngay
+        </a>
+
+      </div>
+
+    </div>
+
+  </form>
+
+  <!-- REGISTER -->
+
+  <form
+    id="registerForm"
+    style="display:none;"
+    onsubmit="signUp(); return false;">
+
+    <div class="login-card">
+
+      <h2>Tạo tài khoản</h2>
+
+      <h3>Tham gia cộng đồng đọc báo</h3>
+
+      <div class="input-group">
+
+        <label>Username</label>
+
+        <input
+          id="username"
+          type="text"
+          placeholder="Nhập username"
+        >
+
+      </div>
+
+      <div class="input-group">
+
+        <label>Email</label>
+
+        <input
+          id="email"
+          type="email"
+          placeholder="Nhập email"
+        >
+
+      </div>
+
+      <div class="input-group">
+
+        <label>Gender</label>
+
+        <select id="gender">
+
+          <option value="MALE">
+            MALE
+          </option>
+
+          <option value="FEMALE">
+            FEMALE
+          </option>
+
+          <option value="OTHER">
+            OTHER
+          </option>
+
+        </select>
+
+      </div>
+
+      <div class="input-group">
+
+        <label>Mật khẩu</label>
+
+        <input
+          id="password"
+          type="password"
+          placeholder="Nhập mật khẩu"
+        >
+
+      </div>
+
+      <div class="input-group">
+
+        <label>Xác nhận mật khẩu</label>
+
+        <input
+          id="confirmPassword"
+          type="password"
+          placeholder="Nhập lại mật khẩu"
+        >
+
+      </div>
+
+      <div id="register-error" class="error-text"></div>
+
+      <button class="login-btn" type="submit">
+        Đăng ký
+      </button>
+
+      <div class="register-text">
+
+        Đã có tài khoản?
+
+        <a href="javascript:void(0)" onclick="showLogin()">
+          Đăng nhập
+        </a>
+
+      </div>
+
+    </div>
+
+  </form>
+
+  <!-- FORGOT PASSWORD -->
+
+  <form
+    id="forgotForm"
+    style="display:none;"
+    onsubmit="return false;">
+
+    <div class="login-card">
+
+      <h2>Quên mật khẩu</h2>
+
+      <h3 id="forgot-step-title">
+        Nhập email để nhận OTP
+      </h3>
+
+      <!-- STEP 1 -->
+
+      <div id="step-email">
+
+        <div class="input-group">
+
+          <label>Email</label>
+
+          <input
+            id="forgotEmail"
+            type="email"
+            placeholder="Nhập email"
+          >
+
+        </div>
+
+        <button
+          id="sendOtpBtn"
+          class="login-btn"
+          type="button"
+          onclick="sendOtp()">
+          Gửi OTP
+        </button>
+
+      </div>
+
+      <!-- STEP 2 -->
+
+      <div id="step-otp" style="display:none;">
+
+        <div class="input-group">
+
+          <label>OTP</label>
+
+          <input
+            id="otp"
+            type="text"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            maxlength="6"
+            placeholder="Nhập mã OTP"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+
+        </div>
+
+        <button
+          class="login-btn"
+          type="button"
+          onclick="verifyOtp()"
+        >
+          Xác nhận OTP
+        </button>
+
+      </div>
+
+      <!-- STEP 3 -->
+
+      <div id="step-password" style="display:none;">
+
+        <div class="input-group">
+
+          <label>Mật khẩu mới</label>
+
+          <input
+            id="newPassword"
+            type="password"
+            placeholder="Nhập mật khẩu mới"
+          >
+
+        </div>
+
+        <div class="input-group">
+
+          <label>Xác nhận mật khẩu</label>
+
+          <input
+            id="confirmNewPassword"
+            type="password"
+            placeholder="Nhập lại mật khẩu"
+          >
+
+        </div>
+
+        <button
+          class="login-btn"
+          type="button"
+          onclick="resetPassword()"
+        >
+          Đổi mật khẩu
+        </button>
+
+      </div>
+
+      <div id="forgot-error" class="error-text"></div>
+
+      <div class="register-text">
+
+        Quay lại đăng nhập?
+
+        <a href="/Fe/login/" onclick="showLogin()">
+          Đăng nhập
+        </a>
+
+      </div>
+
+    </div>
+
+  </form>
+
+  <script src="/Fe/js/config.js"></script>
+  <script src="/Fe/js/auth.js"></script>
+  <script src="/Fe/js/app.js"></script>
+  <script src="/Fe/js/api.js"></script>
+  <script src="/Fe/js/login.js"></script>
+  <script src="/Fe/js/user.js"></script>
+  <script src="/Fe/js/forgot-password.js"></script>
+  
+</body>
+</html>
+

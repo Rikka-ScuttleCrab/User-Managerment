@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Duyệt bài báo</title>
+
+  <link rel="stylesheet" href="../css/approve-news.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      NEWS TODAY
+    </div>
+
+    <div class="nav-right">
+
+      <button
+        class="back-btn"
+        onclick="goDashboard()"
+      >
+        ← Quay lại
+      </button>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Duyệt bài báo
+      </h1>
+
+      <p>
+        Kiểm tra và phê duyệt bài viết trước khi đăng tải
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CONTENT -->
+
+  <section class="approve-section">
+
+    <!-- CARD -->
+
+    <div class="news-card">
+
+      <div class="news-header">
+
+        <span class="status pending">
+          Chờ duyệt
+        </span>
+
+        <span class="date">
+          13/05/2026
+        </span>
+
+      </div>
+
+      <h2>
+        Apple ra mắt AI thế hệ mới cho iPhone
+      </h2>
+
+      <p class="author">
+        Tác giả: Nguyễn Văn A
+      </p>
+
+      <p class="description">
+        Apple vừa công bố nền tảng AI mới giúp tăng hiệu suất và cải thiện trải nghiệm người dùng trên iPhone thế hệ tiếp theo...
+      </p>
+
+      <div class="action-buttons">
+
+        <button class="approve-btn hidden" id="approveBtn" onclick="approveNews()">
+          ✔ Phê duyệt
+        </button>
+
+        <button class="reject-btn hidden" id="rejectBtn" onclick="rejectNews()">
+          ✖ Từ chối
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="news-card">
+
+      <div class="news-header">
+
+        <span class="status approved">
+          Đã duyệt
+        </span>
+
+        <span class="date">
+          12/05/2026
+        </span>
+
+      </div>
+
+      <h2>
+        Việt Nam phát triển trung tâm dữ liệu AI mới
+      </h2>
+
+      <p class="author">
+        Tác giả: Trần Minh B
+      </p>
+
+      <p class="description">
+        Trung tâm dữ liệu AI quy mô lớn được xây dựng nhằm phục vụ các hệ thống trí tuệ nhân tạo và điện toán đám mây...
+      </p>
+
+      <div class="action-buttons">
+
+        <button class="approved-disabled">
+          ✓ Đã phê duyệt
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="/Fe/js/config.js"></script>
+  <script src="/Fe/js/auth.js"></script>
+  <script src="/Fe/js/token.js"></script>
+  <script src="/Fe/js/api.js"></script>
+  <script src="/Fe/js/app.js"></script>
+  <script src="/Fe/js/approve-news.js"></script>
+</body>
+
+</html>

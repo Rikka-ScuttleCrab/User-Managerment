@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Error System</title>
+
+<style>
+    body{
+        margin:0;
+        background:black;
+        overflow:hidden;
+        font-family: Consolas, monospace;
+    }
+
+    #terminal{
+        color:red;
+        padding:20px;
+        height:100vh;
+        overflow:hidden;
+        white-space:pre-wrap;
+        font-size:18px;
+        text-shadow:0 0 5px red;
+    }
+
+    .line{
+        animation: flicker 0.05s infinite;
+    }
+
+    @keyframes flicker{
+        0%{opacity:1;}
+        50%{opacity:0.85;}
+        100%{opacity:1;}
+    }
+</style>
+</head>
+<body>
+
+<div id="terminal"></div>
+
+<script>
+const terminal = document.getElementById("terminal");
+
+const messages = [
+    "ERROR... FIX THE CODE LN123",
+    "SYSTEM FAILURE...",
+    "shutdown system...",
+    "CRITICAL ERROR...",
+    "NULL POINTER EXCEPTION...",
+    "ACCESS DENIED...",
+    "MEMORY OVERFLOW..."
+];
+
+function randomLine(){
+
+    const line = Math.floor(Math.random() * 500);
+    const code = Math.floor(Math.random() * 9000) + 1000;
+
+    const msg = messages[
+        Math.floor(Math.random() * messages.length)
+    ];
+
+    const text =
+        `ERRORRRR... ${msg} ... LN${line} `
+        + `... shutdown system ... CODE:${code}`;
+
+    const div = document.createElement("div");
+    div.className = "line";
+    div.textContent = text;
+
+    terminal.appendChild(div);
+
+    // Tự cuộn xuống dưới
+    window.scrollTo(0, document.body.scrollHeight);
+
+    // Giới hạn số dòng
+    if(terminal.children.length > 200){
+        terminal.removeChild(terminal.firstChild);
+    }
+}
+
+// Chạy liên tục
+setInterval(randomLine, 30);
+</script>
+
+</body>
+</html>

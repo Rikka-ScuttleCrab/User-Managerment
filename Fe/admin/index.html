@@ -1,151 +1,101 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-
   <meta charset="UTF-8">
-
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
-
   <title>
     Dashboard quản trị
   </title>
-
   <link rel="stylesheet" href="/Fe/css/admin.css">
   <link rel="stylesheet" href="/Fe/css/sidebar.css">
   <link rel="stylesheet" href="/Fe/css/topbar.css">
-
 </head>
-
 <body>
-
   <!-- SIDEBAR -->
-
   <div id="sidebar-container"></div>
-
   <!-- MAIN -->
-
   <main class="main-content">
-
     <!-- TOPBAR -->
-
     <div id="topbar-container"></div>
-
     <!-- DASHBOARD -->
-
     <div class="dashboard-grid">
-
       <!-- USERS -->
-
       <div
         class="dashboard-card"
         onclick="goUsers()"
       >
-
         <div class="dashboard-icon">
           👤
         </div>
-
         <div class="dashboard-info">
-
           <h3>
             Người dùng
           </h3>
-
           <p id="totalUsers">
             0
           </p>
-
         </div>
-
       </div>
-
       <!-- ROLES -->
-
       <div
         class="dashboard-card"
         onclick="goRoles()"
       >
-
         <div class="dashboard-icon">
           🛡️
         </div>
-
         <div class="dashboard-info">
-
           <h3>
             Nhóm người dùng
           </h3>
-
           <p id="totalRoles">
             0
           </p>
-
         </div>
-
       </div>
-
       <!-- APPROVED NEWS -->
-
       <div class="dashboard-card">
-
         <div class="dashboard-icon">
           📰
         </div>
-
         <div class="dashboard-info">
-
           <h3>
             Tin đã duyệt hôm nay
           </h3>
-
           <p id="approvedNews">
             0
           </p>
-
         </div>
-
       </div>
-
       <!-- VISITS -->
-
       <div class="dashboard-card">
-
         <div class="dashboard-icon">
           📈
         </div>
-
         <div class="dashboard-info">
-
           <h3>
             Lượt truy cập hôm nay
           </h3>
-
           <p id="todayVisits">
             0
           </p>
-
         </div>
-
       </div>
-
     </div>
-
-
     <!-- GAME SECTION -->
     <div class="dashboard-card game-section">
-
       <h2>🎮 Mini Game</h2>
-
       <select id="gameSelector" onchange="changeGame()">
-        <option value="dino" selected>Dino</option>
-        <option value="flappy">Flappy Bird</option>
-        <option value="2048">2048</option>
+        <option value="dino" selected>🦖 Dino</option>
+        <option value="flappy">🐦 Flappy Bird</option>
+        <option value="2048">🔢 2048</option>
+        <option value="snake">🐍 Rắn săn mồi</option>
+        <option value="tetris">🧱 Tetris</option>
+        <option value="pacman">👻 Pacman</option>
       </select>
-
       <iframe
         id="gameFrame"
         src="https://wayou.github.io/t-rex-runner/"
@@ -154,11 +104,8 @@
         frameborder="0"
         style="margin-top: 12px; border-radius: 12px;"
       ></iframe>
-
     </div>
-
   </main>
-
   <script src="/Fe/js/config.js"></script>
   <script src="/Fe/js/auth.js"></script>
   <script src="/Fe/js/token.js"></script>
@@ -166,40 +113,38 @@
   <script src="/Fe/js/app.js"></script>
   <script src="/Fe/js/sidebar.js"></script>
   <script src="/Fe/js/topbar.js"></script>
+  <script src="/Fe/js/common/admin-api.js"></script>
   <script src="/Fe/js/admin/dashboard.js"></script>
-
   <script>
-
     loadSidebar("dashboard");
-
     loadTopbar(
       "Admin Dashboard"
     );
-
   </script>
-
-
   <script>
   function changeGame() {
       const game = document.getElementById("gameSelector").value;
       const frame = document.getElementById("gameFrame");
-
       if (!frame) return;
-
       if (game === "dino") {
           frame.src = "https://chromedino.com/";
       }
-
       if (game === "flappy") {
           frame.src = "https://flappybird.io/";
       }
-
       if (game === "2048") {
           frame.src = "https://play2048game.com/";
       }
+      if (game === "snake") {
+          frame.src = "https://idev.games/embed/simple-snake";
+      }
+      if (game === "tetris") {
+          frame.src = "https://www.miniplay.com/embed/tetris";
+      }
+      if (game === "pacman") {
+          frame.src = "https://freepacman.org/";
+      }
   }
   </script>
-
 </body>
-
 </html>

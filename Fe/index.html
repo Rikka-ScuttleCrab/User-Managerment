@@ -6,136 +6,93 @@
   <title>News Today</title>
   <link rel="stylesheet" href="/Fe/css/toast.css">
   <link rel="stylesheet" href="css/index.css">
-  
 </head>
-
 <body>
-
   <nav class="navbar">
-
     <div 
       class="logo" 
       onclick="goHome()">
       NEWS TODAY
     </div>
-
     <!-- chưa login -->
-
     <div class="nav-right" id="guest-menu">
-
       <button class="btn btn-login" onclick="goLogin()">
         Đăng nhập
       </button>
-
       <button class="btn btn-register" onclick="goRegister()">
         Đăng ký
       </button>
-
     </div>
-
     <!-- đã login -->
-
     <div class="profile-wrapper" id="user-menu" style="display:none;">
-
       <button class="profile-btn" onclick="toggleProfileMenu()">
         👤
       </button>
-
       <div class="profile-menu" id="profile-menu">
-
         <div class="profile-header">
           <h3 id="nickname">
             Loading...
           </h3>
         </div>
-
         <div
           class="profile-item"
           onclick="goAccountCenter()">
           Trung tâm tài khoản
         </div>
-
         <div class="profile-item" onclick="logout()">
           Đăng xuất
         </div>
-
       </div>
-
     </div>
-
   </nav>
-
   <!-- HERO -->
-
   <section class="hero">
-
     <h1>Tin tức mới nhất</h1>
-
     <p>
       Cập nhật nhanh chóng các tin tức nóng hổi mỗi ngày
     </p>
-
   </section>
-
   <!-- NEWS -->
-
   <section class="section">
-
     <h2 class="section-title">
       Tin nổi bật
     </h2>
-
     <div class="news-grid">
-
       <div class="news-card">
         <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200">
-
         <div class="news-content">
           <h3>Công nghệ AI phát triển mạnh năm 2026</h3>
-
           <p>
             Các công nghệ AI mới đang thay đổi mạnh mẽ ngành công nghiệp phần mềm.
           </p>
         </div>
       </div>
-
       <div class="news-card">
         <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200">
-
         <div class="news-content">
           <h3>Kinh tế thế giới có nhiều biến động</h3>
-
           <p>
             Các chuyên gia dự báo nền kinh tế toàn cầu sẽ tiếp tục thay đổi lớn.
           </p>
         </div>
       </div>
-
       <div class="news-card">
         <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200">
-
         <div class="news-content">
           <h3>Xu hướng lập trình mới cho developer</h3>
-
           <p>
             Những framework và công nghệ hot nhất dành cho lập trình viên hiện nay.
           </p>
         </div>
       </div>
-
     </div>
-
   </section>
   <div id="toastContainer"
       class="toast-container"></div>
-
-
   <script src="js/config.js"></script>
   <script src="js/auth.js"></script>
-  
   <script src="js/app.js"></script>
   <script src="js/index.js"></script>
   <script src="js/user.js"></script>
-
 </body>
 </html>

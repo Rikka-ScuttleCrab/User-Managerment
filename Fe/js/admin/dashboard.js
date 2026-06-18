@@ -1,108 +1,73 @@
-
 async function checkDashboardPage() {
-
-  const hasDashboardPermission =
-    await checkPermission(
-      "admin",
-      "VIEW"
-    );
-
-  if (!hasDashboardPermission) {
-
-    alert("Bạn không có quyền truy cập");
-
-    window.location.href =
-      "/Fe/index.html";
-
-    return false;
-  }
-
-  return true;
+  return await checkPagePermission("admin");
 }
-
 async function loadDashboard() {
-
   try {
-
-    // LOAD USERS
-
+    // USERS
     const usersRes =
       await fetch(
-        `${API_BASE}/v1/api/admin/users`,{
-            headers: {
-                    "Authorization": `Bearer ${token}`
-                }
+        `${API_BASE}/v1/api/admin/users?page=1`,
+        {
+          headers: {
+            Authorization:
+              `Bearer ${token}`
+          }
         }
       );
-
     const usersResult =
       await usersRes.json();
-
-    const users =
-      usersResult.data || [];
-
     document.getElementById(
       "totalUsers"
-    ).innerText = users.length;
-
-    // LOAD ROLES
-
+    ).innerText =
+      usersResult.data?.totalItems || 0;
+    // ROLES
     const rolesRes =
       await fetch(
-        `${API_BASE}/v1/api/admin/roles`,{
-            headers: {
-                    "Authorization": `Bearer ${token}`
-            }
+        `${API_BASE}/v1/api/admin/roles`,
+        {
+          headers: {
+            Authorization:
+              `Bearer ${token}`
+          }
         }
       );
-
     const rolesResult =
       await rolesRes.json();
-
     const roles =
       rolesResult.data || [];
-
     document.getElementById(
       "totalRoles"
-    ).innerText = roles.length;
-
+    ).innerText =
+      roles.length;
     // MOCK DATA
-
     document.getElementById(
       "approvedNews"
     ).innerText =
       Math.floor(
         Math.random() * 30
       ) + 5;
-
     document.getElementById(
       "todayVisits"
     ).innerText =
       Math.floor(
         Math.random() * 5000
       ) + 1000;
-
   } catch (err) {
-
-    console.log(err);
-
+    console.error(
+      "Load dashboard error:",
+      err
+    );
+    showToast(
+      "Không thể tải dữ liệu dashboard",
+      "error"
+    );
   }
 }
-
-function goUsers() {
-
-  window.location.href =
-    "/Fe/admin/users/";
-}
-
-function goRoles() {
-
-  window.location.href =
-    "/Fe/admin/roles/";
-}
-
-window.addEventListener(
-  "load",
-  checkDashboardPage(),
-  loadDashboard(),
-);
+window.addEventListener("load", async () => {
+  const allowed =
+    await checkDashboardPage();
+    if (!allowed) {
+      return;
+    }
+  await loadDashboard();
+});

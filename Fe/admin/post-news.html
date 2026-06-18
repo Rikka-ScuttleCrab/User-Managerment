@@ -1,100 +1,74 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Đăng bài báo</title>
-
   <link rel="stylesheet" href="../css/post-news.css">
+  <link rel="stylesheet" href="../css/toast.css">
 </head>
-
 <body>
-
   <!-- NAVBAR -->
-
   <nav class="navbar">
-
     <div class="logo">
       NEWS TODAY
     </div>
-
     <button
       class="back-btn"
       onclick="goDashboard()"
     >
       ← Quay lại
     </button>
-
   </nav>
-
   <!-- HERO -->
-
   <section class="hero">
-
     <div class="hero-content">
-
       <h1>
         Đăng bài báo
       </h1>
-
       <p>
         Tạo bài viết mới và gửi lên hệ thống
       </p>
-
     </div>
-
   </section>
-
   <!-- FORM -->
-
   <section class="form-section">
-
     <div class="form-card">
-
       <div class="form-group">
-
         <label>
           Tiêu đề bài báo
         </label>
-
         <input
+          id="newsTitle"
           type="text"
           placeholder="Nhập tiêu đề..."
+          spellcheck="false"
         >
-
       </div>
-
       <div class="form-group">
-
         <label>
           Nội dung bài viết
         </label>
-
         <textarea
-          rows="10"
+          id="newsContent"
           placeholder="Nhập nội dung bài viết..."
+          oninput="autoResize(this)"
+          spellcheck="false"
         ></textarea>
-
       </div>
-
       <button class="submit-btn hidden" id="submitPostNewsBtn" onclick="submitPostNews()">
         Đăng bài
       </button>
-
     </div>
-
+    <div id="toastContainer"
+      class="toast-container"></div>
   </section>
-
-
   <script src="/Fe/js/config.js"></script>
   <script src="/Fe/js/auth.js"></script>
   <script src="/Fe/js/token.js"></script>
   <script src="/Fe/js/app.js"></script>
   <script src="/Fe/js/api.js"></script>
+  <script src="/Fe/js/common/admin-api.js"></script>
   <script src="/Fe/js/post-news.js"></script>
-
 </body>
-
 </html>

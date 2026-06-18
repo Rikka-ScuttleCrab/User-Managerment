@@ -1,88 +1,59 @@
 <div
   class="modal"
   id="roleUsersModal">
-
   <div class="modal-content large-modal">
-
     <div class="modal-header">
-
       <h2 id="roleUsersTitle">
         Thành viên role
       </h2>
-
       <button
         class="close-modal-btn"
         onclick="closeRoleUsersModal()">
         ✕
       </button>
-
     </div>
-
     <!-- SEARCH -->
-
     <div class="search-box role-search-box">
-
       <input
         type="text"
         placeholder="Tìm kiếm user theo ID, username, email, nickname..."
         oninput="searchUsersToAdd(this.value)"
       >
-
       <div
         id="searchUsersResult"
         class="search-users-result">
       </div>
-
     </div>
-
     <!-- TABLE -->
-
     <div class="role-users-table-wrapper">
-
       <table class="role-users-table">
-
         <thead>
-
           <tr>
-
             <th>ID</th>
-
             <th>Username</th>
-
             <th>Email</th>
-
+            <th>Nickname</th>
             <th>Thao tác</th>
-
           </tr>
-
         </thead>
-
         <tbody id="roleUsersList">
-
         </tbody>
-
       </table>
-
     </div>
-    
     <div class="modal-actions">
-
       <button
         class="cancel-btn"
         onclick="closeRoleUsersModal()"
       >
         Đóng
       </button>
-
       <button
+        id="saveRoleUsersBtn"
         class="save-btn"
         onclick="saveRoleUsers()"
       >
         Lưu thay đổi
       </button>
-
     </div>
-    
   </div>
-
 </div>

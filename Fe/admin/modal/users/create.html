@@ -1,117 +1,81 @@
 <div class="modal" id="createUserModal">
-
   <div class="modal-content">
-
     <div class="modal-header">
-
       <h2>
         Tạo người dùng
       </h2>
-
       <button
         class="close-modal-btn"
         onclick="closeCreateUserModal()"
       >
         ✕
       </button>
-
     </div>
-
     <!-- THÊM FORM -->
-
     <form id="createUserForm">
-
       <div class="form-grid">
-
         <div class="form-group">
-
           <label>
             Username
           </label>
-
           <input
             type="text"
             id="createUsername"
             placeholder="Nhập username"
           >
-
         </div>
-
         <div class="form-group">
-
           <label>
             Password
           </label>
-
           <input
             type="password"
             id="createPassword"
             placeholder="Nhập password"
           >
-
         </div>
-
         <div class="form-group">
-
           <label>
             Email
           </label>
-
           <input
             type="email"
             id="createEmail"
             placeholder="Nhập email"
           >
-
         </div>
-
         <div class="form-group">
-
           <label>
             Nickname
           </label>
-
           <input
             type="text"
             id="createNickname"
             placeholder="Có thể để trống"
           >
-
         </div>
-
         <div class="form-group">
-
           <label>
             Gender
           </label>
-
           <select id="createGender">
-
             <option value="MALE">
               MALE
             </option>
-
             <option value="FEMALE">
               FEMALE
             </option>
-
             <option value="OTHER">
               OTHER
             </option>
-
           </select>
-
         </div>
-
       </div>
-
       <p
         id="createError"
         class="form-error"
       ></p>
-
       <div class="modal-actions">
-
         <button
           type="button"
           class="cancel-btn"
@@ -119,7 +83,6 @@
         >
           Huỷ
         </button>
-
         <button
           type="button"
           class="confirm-btn"
@@ -127,11 +90,7 @@
         >
           Tạo người dùng
         </button>
-
       </div>
-
     </form>
-
   </div>
-
 </div>

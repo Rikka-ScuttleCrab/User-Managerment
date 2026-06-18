@@ -1,16 +1,9 @@
 package com.example.ManagerApp.config;
-
 import java.sql.Connection;
 import java.sql.Statement;
-
 import com.example.ManagerApp.utils.DBConnection;
-
-
-
 public class SchemaInit {
-
     public static void init() {
-
         String createUsers = """
             CREATE TABLE IF NOT EXISTS users (
                 id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -26,7 +19,6 @@ public class SchemaInit {
                 updated_by VARCHAR(100)
             )
         """;
-
         String createRoles = """
             CREATE TABLE IF NOT EXISTS roles (
                 id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -34,7 +26,6 @@ public class SchemaInit {
                 description VARCHAR(255)
             )
         """;
-
         String createPermissions = """
             CREATE TABLE IF NOT EXISTS permissions (
                 id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -44,7 +35,6 @@ public class SchemaInit {
                 permissionDescription VARCHAR(255)
             )
         """;
-
         String createUserRole = """
             CREATE TABLE IF NOT EXISTS user_role (
                 user_id BIGINT NOT NULL,
@@ -54,7 +44,6 @@ public class SchemaInit {
                 FOREIGN KEY (role_id) REFERENCES roles(id)
             )
         """;
-
         String createPermissionRole = """
             CREATE TABLE IF NOT EXISTS permission_role (
                 permission_id BIGINT NOT NULL,
@@ -64,18 +53,14 @@ public class SchemaInit {
                 FOREIGN KEY (role_id) REFERENCES roles(id)
             )
         """;
-
         try (Connection conn = DBConnection.getConnection();
              Statement st = conn.createStatement()) {
-
             st.execute(createUsers);
             st.execute(createRoles);
             st.execute(createPermissions);
             st.execute(createUserRole);
             st.execute(createPermissionRole);
-
             System.out.println("Tables created successfully!");
-
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

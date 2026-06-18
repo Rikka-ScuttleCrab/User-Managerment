@@ -4,14 +4,11 @@
   box-sizing:border-box;
   font-family: Arial, sans-serif;
 }
-
 body{
   background:#f5f5f5;
   min-height:100vh;
 }
-
 /* HEADER */
-
 .navbar{
   width:100%;
   height:70px;
@@ -25,19 +22,16 @@ body{
   top:0;
   z-index:999;
 }
-
 .logo{
   font-size:28px;
   font-weight:bold;
   color:#60a5fa;
 }
-
 .nav-right{
   display:flex;
   align-items:center;
   gap:15px;
 }
-
 .btn{
   border:none;
   padding:10px 20px;
@@ -46,76 +40,60 @@ body{
   font-weight:bold;
   transition:0.3s;
 }
-
 .btn-login{
   background:white;
   color:#111827;
 }
-
 .btn-login:hover{
   background:#ddd;
 }
-
 .btn-register{
   background:#3b82f6;
   color:white;
 }
-
 .btn-register:hover{
   background:#2563eb;
 }
-
 /* HERO */
-
 .hero{
   height:400px;
   background:
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
     url("https://images.unsplash.com/photo-1495020689067-958852a7765e?q=80&w=1400");
-
   background-size:cover;
   background-position:center;
-
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-
   color:white;
   padding:20px;
 }
-
 .hero h1{
   font-size:60px;
   margin-bottom:20px;
 }
-
 .hero p{
   font-size:22px;
   opacity:0.9;
 }
-
 /* NEWS */
-
 .section{
   width:1200px;
   max-width:95%;
   margin:50px auto;
 }
-
 .section-title{
   font-size:32px;
   margin-bottom:30px;
   color:#111827;
 }
-
 .news-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
   gap:25px;
 }
-
 .news-card{
   background:white;
   border-radius:15px;
@@ -124,37 +102,29 @@ body{
   transition:0.3s;
   cursor:pointer;
 }
-
 .news-card:hover{
   transform:translateY(-5px);
 }
-
 .news-card img{
   width:100%;
   height:200px;
   object-fit:cover;
 }
-
 .news-content{
   padding:20px;
 }
-
 .news-content h3{
   margin-bottom:15px;
   color:#111827;
 }
-
 .news-content p{
   color:#666;
   line-height:1.5;
 }
-
 /* PROFILE */
-
 .profile-wrapper{
   position:relative;
 }
-
 .profile-btn{
   width:45px;
   height:45px;
@@ -166,7 +136,6 @@ body{
   color:white;
   font-size:18px;
 }
-
 .profile-menu{
   position:absolute;
   right:0;
@@ -178,31 +147,25 @@ body{
   box-shadow:0 10px 25px rgba(0,0,0,0.2);
   display:none;
 }
-
 .profile-header{
   padding:20px;
   background: deepskyblue;
   color:#111827;
   text-align:center;
 }
-
 .profile-header h3{
   margin-bottom:5px;
 }
-
 .profile-item{
   padding:15px 20px;
   border-top:1px solid black;
   cursor:pointer;
   transition:0.3s;
 }
-
 .profile-item:hover{
   background:#333;
 }
-
 /* MODAL */
-
 .modal{
   position:fixed;
   inset:0;
@@ -212,7 +175,6 @@ body{
   align-items:center;
   z-index:1000;
 }
-
 .modal-content{
   width:500px;
   background:white;
@@ -220,24 +182,20 @@ body{
   padding:30px;
   position:relative;
 }
-
 .modal-content h2{
   text-align:center;
   margin-bottom:25px;
   color:#111827;
 }
-
 .info-group{
   margin-bottom:15px;
 }
-
 .info-group label{
   display:block;
   margin-bottom:5px;
   font-weight:bold;
   color:#333;
 }
-
 .info-group input{
   width:100%;
   padding:12px;
@@ -245,7 +203,6 @@ body{
   border:1px solid #ddd;
   outline:none;
 }
-
 .save-btn{
   width:100%;
   padding:12px;
@@ -257,11 +214,9 @@ body{
   cursor:pointer;
   margin-top:15px;
 }
-
 .save-btn:hover{
   background:#2563eb;
 }
-
 .close-btn{
   position:absolute;
   top:15px;
@@ -274,18 +229,15 @@ body{
   color:white;
   cursor:pointer;
 }
-
 .password-message{
   margin-top:15px;
   text-align:center;
   font-size:14px;
   font-weight:bold;
 }
-
 .password-message.success{
   color:green;
 }
-
 .password-message.error{
   color:red;
 }

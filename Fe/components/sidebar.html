@@ -1,14 +1,11 @@
 <aside class="sidebar">
-
   <div class="sidebar-top">
-
     <div
       class="sidebar-logo"
       onclick="goHome()"
     >
       Phùng Thanh Báo
     </div>
-
     <button
       id="toggleSidebarBtn"
       class="toggle-sidebar-btn"
@@ -16,40 +13,32 @@
     >
       ☰
     </button>
-
   </div>
   <div class="menu-item dashboard-item"
     onclick="goAdminDashboard()">
     <span class="menu-icon">📊</span>
-
     <span class="menu-text">
       Dashboard
     </span>
   </div>
-
   <div class="sidebar-title" data-i18n="systemAdministration">
     Quản trị hệ thống
   </div>
-
   <div class="sidebar-menu">
-
     <div id="menuUsers"
       class="menu-item"
       onclick="goUsers()">
       <span class="menu-icon">👥</span>
-
       <span
         class="menu-text"
         data-i18n="usersManagement">
         Danh mục người dùng
       </span>
     </div>
-
     <div id="menuRoles"
       class="menu-item"
       onclick="goRoles()">
       <span class="menu-icon">🛡️</span>
-
       <span
         class="menu-text"
         data-i18n="rolesManagement"
@@ -57,12 +46,10 @@
         Danh mục nhóm người dùng
       </span>
     </div>
-
     <div id="menuPermissions"
       class="menu-item"
       onclick="goPermissions()">
       <span class="menu-icon">🔐</span>
-
       <span
         class="menu-text"
         data-i18n="permissionsManagement"
@@ -70,13 +57,11 @@
         Phân quyền nhóm người dùng
       </span>
     </div>
-
     <button class="logout-btn"
       onclick="adminlogout()">
       <span class="logout-icon">
         ⏻
       </span>
-
       <span
         class="logout-text"
         data-i18n="logout"
@@ -84,7 +69,5 @@
         Đăng xuất
       </span>
     </button>
-
   </div>
-
 </aside>

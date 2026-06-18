@@ -8,47 +8,31 @@
   padding: 24px 20px;
   border-radius: 24px;
   box-shadow: 2px 0 10px rgba(0,0,0,0.05);
-
   display: flex;
   flex-direction: column;
 }
-
 .sidebar-top {
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   margin-bottom: 24px;
 }
 /* LOGO */
 .sidebar-logo {
-
   font-size: 21px;
-
   font-weight: bold;
-
   color: #2f80ed;
-
   cursor: pointer;
-
   line-height: 1.1;
-
   max-width: 170px;
-
   white-space: normal;
 }
-
-
 /* DASHBOARD BUTTON (tách riêng để không dính title) */
 .dashboard-item {
   margin-bottom: 18px;   /* 👈 FIX quan trọng */
   background: #f5f8ff;
   border-radius: 14px;
 }
-
 /* TITLE */
 .sidebar-title {
   font-size: 18px;
@@ -60,218 +44,128 @@
   letter-spacing: 0.5px;
   margin-left: 20px;
 }
-
 /* MENU */
 .sidebar-menu {
   display: flex;
   flex-direction: column;
   gap: 12px;
-
   flex: 1; /* đẩy logout xuống dưới */
 }
-
 /* ITEM */
 .menu-item {
-
   display: flex;
-
   align-items: center;
-
   gap: 14px;
-
   padding: 14px 16px;
-
   border-radius: 12px;
-
   cursor: pointer;
-
   transition: 0.2s;
-
   font-weight: 600;
-
   color: #444;
 }
-
 .menu-item:hover {
   background: #edf4ff;
   color: #2f80ed;
 }
-
 .menu-item.active {
   background: #2f80ed;
   color: white;
 }
-
 .menu-icon {
-
   font-size: 20px;
-
   min-width: 24px;
-
   text-align: center;
 }
-
 .logout-btn {
-
   border: none;
-
   background: #ff4d4f;
-
   color: white;
-
   padding: 12px 16px;
-
   border-radius: 12px;
-
   cursor: pointer;
-
   font-weight: bold;
-
   margin-top: auto;
-
   display: flex;
-
   align-items: center;
-
   gap: 12px;
-
   transition: 0.2s;
 }
-
 .logout-btn:hover {
-
   background: #d9363e;
 }
-
 .logout-icon {
-
   font-size: 18px;
-
   min-width: 20px;
-
   text-align: center;
 }
-
 .hidden {
   display: none !important;
 }
-
 .toggle-sidebar-btn {
-
   width: 42px;
-
   height: 42px;
-
   border: none;
-
   border-radius: 10px;
-
   background: #f3f4f6;
-
   cursor: pointer;
-
   font-size: 18px;
-
   flex-shrink: 0;
-
   transition: 0.2s;
 }
-
 .toggle-sidebar-btn:hover {
-
   background: #e5e7eb;
 }
-
 .sidebar.collapsed {
-
   width: 88px;
 }
-
 /* ẨN TEXT */
-
 .sidebar.collapsed .sidebar-title,
-
 .sidebar.collapsed .menu-text,
-
 .sidebar.collapsed .logout-text {
-
   display: none;
 }
-
 /* LOGO */
-
 .sidebar.collapsed .sidebar-logo {
-
   font-size: 0;
-
   margin-bottom: 18px;
 }
-
 /* MENU ITEM */
-
 .sidebar.collapsed .menu-item {
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   padding: 14px 0;
-
   font-size: 22px;
 }
-
 /* ACTIVE */
-
 .sidebar.collapsed .menu-item.active {
-
   background: #2f80ed;
-
   color: white;
 }
-
 /* TOGGLE BUTTON */
-
 .sidebar.collapsed .toggle-sidebar-btn {
-
   width: 100%;
 }
-
 /* LOGOUT */
-
 .sidebar.collapsed .logout-btn {
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   width: 100%;
-
   padding: 12px 0;
 }
-
 .sidebar,
 .main-content{
-
   transition: 0.25s ease;
 }
-
 .main-content.expanded {
-
   margin-left: 88px;
 }
-
 .topbar {
-
   transition:
     left 0.25s ease,
     width 0.25s ease;
 }
-
 .topbar.expanded {
-
   left: 118px;
 }
